@@ -1,78 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+import os
+
+html_content = """<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Powertec Utilities Ltd | Pan-European Infrastructure & Critical Operations</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Enterprise Dark-Mode Design System</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .tile {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        h1 { margin-top: 0; }
+        p { color: var(--text-secondary); }
+    </style>
 </head>
 <body>
-
-    <header>
-        <a href="#" class="brand-logo">
-            <img src="images/logo.png" alt="Powertec Logo" style="height: 40px; display: block; onerror='this.style.display=none'">
-            POWERTEC<span>Utilities</span>
-        </a>
-    </header>
-
-    <main>
-        <!-- Strategic Brand Position Hero Block -->
-        <section class="hero-container">
-            <span class="hero-tag">Turnkey Infrastructure Solutions</span>
-            <h1>Pan-European High Voltage & Mission-Critical Asset Operations</h1>
-            <p class="hero-subtext">Delivering complete grid delivery, heavy asset replacement engineering, and complex safety governance for core utility distribution networks and hyper-scale European data centres.</p>
-            <div class="cta-group">
-                <a href="mailto:info@powertecutilities.co.uk" class="btn btn-primary">Retain Our Operations</a>
-                <a href="#workforce" class="btn btn-secondary">Join Operator Network</a>
+    <div class="container">
+        <h1>Corporate Messaging & Design System</h1>
+        <p>Unified architecture for next-generation enterprise solutions.</p>
+        <div class="grid">
+            <div class="tile">
+                <h3>Reliability</h3>
+                <p>Engineered for 99.999% uptime with distributed redundancy.</p>
             </div>
-        </section>
-
-        <!-- Institutional Scale Metric Matrix -->
-        <section class="metric-bar">
-            <div class="metric-box">
-                <div class="metric-title">132kV System Scope</div>
-                <div class="metric-desc">Complete complex switching scheduling, asset isolation, and system delivery thresholds.</div>
+            <div class="tile">
+                <h3>Security</h3>
+                <p>End-to-end encryption with zero-trust network access models.</p>
             </div>
-            <div class="metric-box">
-                <div class="metric-title">EMEA Operational Footprint</div>
-                <div class="metric-desc">Active infrastructure commissioning and AAP command protocols inside core data centre markets.</div>
+            <div class="tile">
+                <h3>Scalability</h3>
+                <p>Elastic cloud orchestration that adapts to real-time demand.</p>
             </div>
-            <div class="metric-box">
-                <div class="metric-title">Tier-1 Regulatory Alignment</div>
-                <div class="metric-desc">Engineered around strict Distribution Network Operator (DNO) safety management policies.</div>
-            </div>
-        </section>
-
-        <!-- Primary Corporate Brand Divisions -->
-        <section class="pillar-section">
-            <h2 class="section-heading">Primary Infrastructure Systems</h2>
-            <div class="pillar-grid">
-                <div class="pillar-card">
-                    <span class="pillar-number">DIVISION 01</span>
-                    <h3>High Voltage Infrastructure & Network Delivery</h3>
-                    <p>Comprehensive turnkey connections, complex line rebuild frameworks, and full substation plant maintenance operations under exact utility governance rules.</p>
-                    <a href="networks.html" class="pillar-link">Examine Network Scope →</a>
-                </div>
-                <div class="pillar-card">
-                    <span class="pillar-number">DIVISION 02</span>
-                    <h3>Data Centre AAP & Mission-Critical Operations</h3>
-                    <p>Specialized energetic system testing, multi-tier isolation architectures, and hyper-scale commissioning protocols delivering zero-downtime execution profiles across mainland Europe.</p>
-                    <a href="data-centres.html" class="pillar-link">Examine Data Centre Scope →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Scalable Ecosystem Positioning Block (For Business Sale Evaluation) -->
-        <section class="workforce-panel" id="workforce">
-            <h2>Agile Workforce Deployment & Quality Assurance</h2>
-            <p>To eliminate dead bench-strength capacity while ensuring massive scalability for major infrastructure contracts, Powertec utilizes a proprietary vetting, onboarding, and safety auditing methodology. We seamlessly mobilize and manage fully certified, rigorously audited Senior Authorised Persons (SAPs) and Data Centre Approved Persons (AAPs) aligned perfectly with complex framework project timelines.</p>
-            <a href="careers.html" class="btn btn-secondary" style="display: inline-block;">Review Contractor Frameworks</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; Powertec Utilities Ltd. Registered in England &amp; Wales. Company no. 08182024.</p>
-    </footer>
-
+        </div>
+    </div>
 </body>
 </html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("Successfully generated index.html")
